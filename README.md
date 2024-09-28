@@ -1,8 +1,8 @@
 # Dashboard Flutter: Contatos e Transferências
 
-##Desenvolvedores:
-Gabriel Abramovick Bortoliero de Souza
-João Pedro Borges Araujo
+## Desenvolvedores:
+### Gabriel Abramovick Bortoliero de Souza
+### João Pedro Borges Araujo
 
 Este projeto consiste em um dashboard desenvolvido em Flutter com duas principais telas: "Contatos" e "Transferências". A aplicação permite o cadastro e manipulação de clientes, além de operações de transferência entre eles, utilizando uma estrutura de dados dinâmica (Lista de Array) conforme visto em sala de aula.
 
