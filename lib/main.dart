@@ -191,11 +191,11 @@ class FormularioContato extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Editor(controlador: _controllerName, rotulo: 'Nome', dica: 'João Borges'),
-          Editor(controlador: _controllerCpf, rotulo: 'CPF', dica: '123.456.789-10'),
-          Editor(controlador: _controllerEmail, rotulo: 'E-mail', dica: 'joao@borges.com'),
-          Editor(controlador: _controllerPhone, rotulo: 'Celular', dica: '(DDD) 91234-5678'),
-          Editor(controlador: _controllerAddress, rotulo: 'Endereço', dica: 'Rua Silva, 840'),
+          EditorContato(controlador: _controllerName, rotulo: 'Nome', dica: 'João Borges'),
+          EditorContato(controlador: _controllerCpf, rotulo: 'CPF', dica: '123.456.789-10'),
+          EditorContato(controlador: _controllerEmail, rotulo: 'E-mail', dica: 'joao@borges.com'),
+          EditorContato(controlador: _controllerPhone, rotulo: 'Celular', dica: '(DDD) 91234-5678'),
+          EditorContato(controlador: _controllerAddress, rotulo: 'Endereço', dica: 'Rua Silva, 840'),
           ElevatedButton(
             onPressed: () {
               _criarContato(context, _controllerCpf, _controllerName, _controllerEmail, _controllerPhone, _controllerAddress);
@@ -226,6 +226,37 @@ class FormularioContato extends StatelessWidget {
       final contatoCriado = Contato(cpf, name, email, phone, address);
       Navigator.pop(context, contatoCriado);
     }
+  }
+}
+
+class EditorContato extends StatelessWidget {
+  final String? dica;
+  final String? rotulo;
+  final IconData? icone;
+  final TextEditingController? controlador;
+
+  const EditorContato({
+    super.key,
+    this.dica,
+    this.icone,
+    this.rotulo,
+    this.controlador,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+
+    final icon = this.icone != null ? Icon(icone, color: Colors.green) : null;
+
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TextField(
+        controller: controlador,
+        keyboardType: TextInputType.text,
+        style: const TextStyle(fontSize: 24.0),
+        decoration: InputDecoration(hintText: dica, labelText: rotulo, icon: icon),
+      ),
+    );
   }
 }
 
