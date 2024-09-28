@@ -1,6 +1,5 @@
-## Desenvolvedores:
-Gabriel Abramovick Bortoliero de Souza
-João Pedro Borges Araujo
+## Gabriel Abramovick Bortoliero de Souza
+## João Pedro Borges Araujo
 
 # Dashboard Flutter: Contatos e Transferências
 
